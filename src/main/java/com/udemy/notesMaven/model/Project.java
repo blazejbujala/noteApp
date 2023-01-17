@@ -23,7 +23,7 @@ public class Project {
         return id;
     }
 
-    Set<ProjectSteps> getSteps() {
+    public Set<ProjectSteps> getSteps() {
         return steps;
     }
 
@@ -46,8 +46,7 @@ public class Project {
     public Set<NoteGroup> getGroups() {
         return groups;
     }
-
-    public void setGroups(Set<NoteGroup> groups) {
+    void setGroups(Set<NoteGroup> groups) {
         this.groups = groups;
     }
 }

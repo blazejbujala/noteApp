@@ -2,10 +2,12 @@ package com.udemy.notesMaven.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
+import lombok.RequiredArgsConstructor;
 
 import java.time.LocalDateTime;
 
 @Entity
+@RequiredArgsConstructor
 public class Note {
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,6 +17,11 @@ public class Note {
     private String description;
     private boolean done;
     private LocalDateTime deadLine;
+
+    public Note(String description, LocalDateTime deadLine ) {
+        this.description = description;
+        this.deadLine = deadLine;
+    }
 
     @Embedded
     private Audit audit = new Audit();
